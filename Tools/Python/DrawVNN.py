@@ -21,4 +21,4 @@ ThreeLayers = [
 ]
 
 
-NNV(ThreeLayers, max_num_nodes_visible=8, node_radius=10, spacing_layer=60, font_size=24).render(save_to_file="my_.pdf")
+NNV(ThreeLayers, node_radius=10, spacing_layer=60, font_size=24).render(save_to_file="ThreeLayers.pdf")
