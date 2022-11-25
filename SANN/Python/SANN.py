@@ -15,7 +15,7 @@
 # hlerr hidden layer error
 # hldlt hidden layer delta
 
-from numpy import exp, array, random, dot, mean, abs
+from numpy import exp, array, random, dot
 
 def sig(x):
     return 1/(1 + exp(-x))
