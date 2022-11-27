@@ -11,7 +11,7 @@
 # err   error
 # dlt   delta 
 
-from numpy import exp, array, random, dot
+from numpy import exp, array, random, dot, transpose
 
 def sm(data):
     return 1/(1 + exp(-data))
@@ -29,9 +29,9 @@ for i in range(10000):
     il = dti
     ol = sm(dot(il,sw))
     # backpropagation follows
-    err = dto - ol           # calculate the error
-    dlt = err * slope(ol)    # multiply the error by the derivative of the sigmoid
-    sw += dot(il.T,dlt)      # adjust the synaptic weghts
+    err = dto - ol               # calculate the output error 
+    dlt = err * slope(ol)        # multiply the error by the derivative of the sigmoid
+    sw += dot(transpose(il),dlt) # adjust the synaptic weghts connecting the input and output layers
 
 print ("Output")
 print (ol)
