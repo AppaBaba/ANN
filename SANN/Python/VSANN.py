@@ -27,7 +27,8 @@ sw = 2*random.random((3,1)) - 1
 for i in range(10000):
     # start of the forword propagation
     il = dti
-    ol = sm(dot(il,sw))
+    hl = sm(dot(il,sw0))
+    ol = sm(dot(hl,sw1))
     # backpropagation follows
     err = dto - ol               # calculate the error
     dlt = err * slope(ol)        # multiply the error by the derivative of the sigmoid
